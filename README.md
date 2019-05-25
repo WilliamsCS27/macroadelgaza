@@ -1,2 +1,0 @@
-# macroadelgaza
-Collaboring

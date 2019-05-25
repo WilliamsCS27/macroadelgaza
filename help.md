@@ -1,0 +1,39 @@
+# macroadelgaza
+Private Sub Workbook_Activate()
+Application.CutCopyMode = False
+Application.OnKey "^c", ""
+Application.CellDragAndDrop = False
+End Sub
+
+Private Sub Workbook_Deactivate()
+Application.CellDragAndDrop = True
+Application.OnKey "^c"
+Application.CutCopyMode = False
+End Sub
+ 
+Private Sub Workbook_WindowActivate(ByVal Wn As Window)
+Application.CutCopyMode = False
+Application.OnKey "^c", ""
+Application.CellDragAndDrop = False
+End Sub
+ 
+Private Sub Workbook_WindowDeactivate(ByVal Wn As Window)
+Application.CellDragAndDrop = True
+Application.OnKey "^c"
+Application.CutCopyMode = False
+End Sub
+ 
+Private Sub Workbook_SheetSelectionChange(ByVal Sh As Object, ByVal Target As Range)
+Application.CutCopyMode = False
+End Sub
+ 
+Private Sub Workbook_SheetActivate(ByVal Sh As Object)
+Application.OnKey "^c", ""
+Application.CellDragAndDrop = False
+Application.CutCopyMode = False
+End Sub
+ 
+Private Sub Workbook_SheetDeactivate(ByVal Sh As Object)
+Application.CutCopyMode = False
+End Sub
+
